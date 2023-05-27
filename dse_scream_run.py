@@ -102,7 +102,7 @@ outAccsTFLite = []
 NExp = 1              #1              #Identificación con número de experimento
 samplerate = 22050
 longitudMaxAudio = 4
-valuesNmfcc = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]   #[3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45]  #Valores de parametro a variar para el numero de coeficientes MFCC
+valuesNmfcc = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45]   #[3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45]  #Valores de parametro a variar para el numero de coeficientes MFCC
 valuesNfft = [256, 512, 1024, 2048, 4096]     #[256, 512, 1024, 2048, 4096] #Valores de parametro a variar para la longitud de la FFT
 valuesWinL = [256, 512, 1024, 2048, 4096]      #[256, 512, 1024, 2048, 4096]  #Valores de parametro a variar para el tamaño de ventana, este debe ser menor o igual a NFFT, la función hace padding con 0
 valuesHopL = [0.25, 0.5, 0.75, 1.0]            #[0.25, 0.5, 0.75, 1.0]      #Valores de parametro a variar para el overlaping opuesto de hop_length
@@ -117,7 +117,7 @@ for Nmfcc in valuesNmfcc:                     #Loop para variar valores del para
       else:
         continue
       for iterableNhopL in valuesHopL:            #Loop para variar valores del parametro Hop_Length => 1/Overlaping
-        #if (Nfft==4096 and NwinL==2048 and iterableNhopL<0.5): #or (Nfft==2048 and NwinL==512 and iterableNhopL==0.5):
+        #if (Nfft==2048 and NwinL<=2048 and iterableNhopL<=1.0): #or (Nfft==2048 and NwinL==512 and iterableNhopL==0.5):
           #continue
         NhopL = int(iterableNhopL*NwinL)
         num_rows = Nmfcc
@@ -126,7 +126,7 @@ for Nmfcc in valuesNmfcc:                     #Loop para variar valores del para
 
         
         for k_size in valuesKernelSize:           #Loop para variar valores del parametro kernel size => Tamaño del kernel de capas convolucionales
-          #if (Nfft==4096 and NwinL==2048 and iterableNhopL==0.5 and k_size<=2):
+          #if (Nfft==512 and NwinL==256 and iterableNhopL==0.5 and k_size<=5):
             #continue
 
           predicTimes = []
