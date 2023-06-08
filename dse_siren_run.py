@@ -99,10 +99,10 @@ preprocsTimes = []
 outAccs = []
 outAccsTFLite = []
 
-NExp = 3121              #1              #Identificación con número de experimento
+NExp = 1              #1              #Identificación con número de experimento
 samplerate = 22050
 longitudMaxAudio = 4
-valuesNmfcc = [42, 45]   #[3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45]  #Valores de parametro a variar para el numero de coeficientes MFCC
+valuesNmfcc = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45]   #[3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45]  #Valores de parametro a variar para el numero de coeficientes MFCC
 valuesNfft = [256, 512, 1024, 2048, 4096]     #[256, 512, 1024, 2048, 4096] #Valores de parametro a variar para la longitud de la FFT
 valuesWinL = [256, 512, 1024, 2048, 4096]      #[256, 512, 1024, 2048, 4096]  #Valores de parametro a variar para el tamaño de ventana, este debe ser menor o igual a NFFT, la función hace padding con 0
 valuesHopL = [0.25, 0.5, 0.75, 1.0]            #[0.25, 0.5, 0.75, 1.0]      #Valores de parametro a variar para el overlaping opuesto de hop_length
